@@ -18,20 +18,22 @@
         <div class="dropdown open my-3">
             <input class="btn btn-secondary dropdown-toggle" type="button" value="<#if name??>${name}<#else>Вид бензина:</#if>" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <form method="post">
                 <button name="btn1" type="submit" class="dropdown-item">АИ-92</button>
                 <button name="btn2" type="submit" class="dropdown-item">АИ-95</button>
                 <button name="btn3" type="submit" class="dropdown-item">АИ-98</button>
                 <button name="btn4" type="submit" class="dropdown-item">ДТ</button>
                 <button name="btn5" type="submit" class="dropdown-item">Газ</button>
+                </form>
             </div>
         </div>
     </div>
-    <div class="mb-3">
-        <form method="post">
-            <input type="number" name="money" placeholder="Введите сумму">
-            <button class="btn btn-primary" type="submit">Рассчёт</button>
-        </form>
-    </div>
+<#--    <div class="mb-3">-->
+<#--        <form method="post">-->
+<#--            <input type="number" name="money" placeholder="Введите сумму">-->
+<#--            <button class="btn btn-primary" type="submit">Рассчёт</button>-->
+<#--        </form>-->
+<#--    </div>-->
     <div>
         <#if res??>
             ${res} л

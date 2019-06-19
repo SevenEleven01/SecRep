@@ -16,16 +16,21 @@ public class MainController {
     }
 
     @PostMapping("/main")
-        public String calc1(@RequestParam int money, @RequestParam String name, Model model) {
-        double res = 0;
-        if (name == "АИ-92") {
-        res = money / 42.27;
-        model.addAttribute("res", res);
-        } else {
-            model.addAttribute("err", "Вид бензина не выбран!");
-        }
-        return "main";
+    public String change(Model model) {
+            int t =1;
+            model.addAttribute("name", "АИ-92");
+            return "main";
     }
+//    public String calc1(@RequestParam int money, @RequestParam String name, Model model) {
+//        double res = 0;
+//        if (name == "АИ-92") {
+//            res = money / 42.27;
+//            model.addAttribute("res", res);
+//        } else {
+//            model.addAttribute("err", "Вид бензина не выбран!");
+//        }
+//        return "main";
+//    }
 
 //    @PostMapping("/main")
 //    public String calc(@RequestParam int money, int t, Model model) {
