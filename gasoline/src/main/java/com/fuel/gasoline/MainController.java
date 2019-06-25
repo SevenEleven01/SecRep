@@ -34,12 +34,17 @@ public class MainController {
     }
 
     @PostMapping("/a92")
-    public String calc(@RequestParam int money, Model model) {
+    public String calc(@RequestParam(required = false, defaultValue = "0") int money, Model model) {
         double res = 0;
-        res = money / 42.27;
-        model.addAttribute("name", "АИ-92");
-        model.addAttribute("price", 42.27);
-        model.addAttribute("res", res);
+
+        if (money > 0) {
+            res = money / 42.27;
+            model.addAttribute("name", "АИ-92");
+            model.addAttribute("price", 42.27);
+            model.addAttribute("res", res);
+        } else {
+            model.addAttribute("err", "Указана недействительная сумма");
+        }
         return "main";
     }
 
@@ -51,12 +56,16 @@ public class MainController {
     }
 
     @PostMapping("/a95")
-    public String calc1(@RequestParam int money, Model model) {
+    public String calc1(@RequestParam(required = false, defaultValue = "0") int money, Model model) {
         double res = 0;
-        res = money / 45.55;
-        model.addAttribute("name", "АИ-95");
-        model.addAttribute("price", 45.55);
-        model.addAttribute("res", res);
+        if (money > 0) {
+            res = money / 45.55;
+            model.addAttribute("name", "АИ-95");
+            model.addAttribute("price", 45.55);
+            model.addAttribute("res", res);
+        } else {
+            model.addAttribute("err", "Указана недействительная сумма");
+        }
         return "main";
     }
 
@@ -68,12 +77,16 @@ public class MainController {
     }
 
     @PostMapping("/a98")
-    public String calc2(@RequestParam int money, Model model) {
+    public String calc2(@RequestParam(required = false, defaultValue = "0") int money, Model model) {
         double res = 0;
-        res = money / 46.18;
-        model.addAttribute("name", "АИ-98");
-        model.addAttribute("price", 46.18);
-        model.addAttribute("res", res);
+        if (money > 0) {
+            res = money / 46.18;
+            model.addAttribute("name", "АИ-98");
+            model.addAttribute("price", 46.18);
+            model.addAttribute("res", res);
+        } else {
+            model.addAttribute("err", "Указана недействительная сумма");
+        }
         return "main";
     }
 
@@ -85,12 +98,16 @@ public class MainController {
     }
 
     @PostMapping("/diesel")
-    public String calc3(@RequestParam int money, Model model) {
+    public String calc3(@RequestParam(required = false, defaultValue = "0") int money, Model model) {
         double res = 0;
+        if (money > 0) {
         res = money / 48.20;
         model.addAttribute("name", "ДТ");
         model.addAttribute("price", 48.20);
         model.addAttribute("res", res);
+        } else {
+            model.addAttribute("err", "Указана недействительная сумма");
+        }
         return "main";
     }
 
@@ -102,12 +119,16 @@ public class MainController {
     }
 
     @PostMapping("/gas")
-    public String calc4(@RequestParam int money, Model model) {
+    public String calc4(@RequestParam(required = false, defaultValue = "0") int money, Model model) {
         double res = 0;
+        if (money > 0) {
         res = money / 21.90;
         model.addAttribute("name", "Газ");
         model.addAttribute("price", 21.90);
         model.addAttribute("res", res);
+        } else {
+            model.addAttribute("err", "Указана недействительная сумма");
+        }
         return "main";
     }
 }
