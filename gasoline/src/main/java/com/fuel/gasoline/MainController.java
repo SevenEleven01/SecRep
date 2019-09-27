@@ -15,8 +15,7 @@ public class MainController {
 
     //Бензин не выбран
     @GetMapping("/main")
-    public String main(@RequestParam(name = "name", required = false, defaultValue = "Вид бензина:") String name, Model model) {
-        model.addAttribute("name", name);
+    public String main() {
         return "main";
     }
 
@@ -36,15 +35,14 @@ public class MainController {
     @PostMapping("/a92")
     public String calc(@RequestParam(required = false, defaultValue = "0") int money, Model model) {
         double res = 0;
-
         if (money > 0) {
             res = money / 42.27;
-            model.addAttribute("name", "АИ-92");
             model.addAttribute("price", 42.27);
             model.addAttribute("res", res);
         } else {
             model.addAttribute("err", "Указана недействительная сумма");
         }
+        model.addAttribute("name", "АИ-92");
         return "main";
     }
 
@@ -60,12 +58,12 @@ public class MainController {
         double res = 0;
         if (money > 0) {
             res = money / 45.55;
-            model.addAttribute("name", "АИ-95");
             model.addAttribute("price", 45.55);
             model.addAttribute("res", res);
         } else {
             model.addAttribute("err", "Указана недействительная сумма");
         }
+        model.addAttribute("name", "АИ-95");
         return "main";
     }
 
@@ -81,12 +79,12 @@ public class MainController {
         double res = 0;
         if (money > 0) {
             res = money / 46.18;
-            model.addAttribute("name", "АИ-98");
             model.addAttribute("price", 46.18);
             model.addAttribute("res", res);
         } else {
             model.addAttribute("err", "Указана недействительная сумма");
         }
+        model.addAttribute("name", "АИ-98");
         return "main";
     }
 
@@ -102,12 +100,12 @@ public class MainController {
         double res = 0;
         if (money > 0) {
         res = money / 48.20;
-        model.addAttribute("name", "ДТ");
         model.addAttribute("price", 48.20);
         model.addAttribute("res", res);
         } else {
             model.addAttribute("err", "Указана недействительная сумма");
         }
+        model.addAttribute("name", "ДТ");
         return "main";
     }
 
@@ -123,12 +121,12 @@ public class MainController {
         double res = 0;
         if (money > 0) {
         res = money / 21.90;
-        model.addAttribute("name", "Газ");
         model.addAttribute("price", 21.90);
         model.addAttribute("res", res);
         } else {
             model.addAttribute("err", "Указана недействительная сумма");
         }
+        model.addAttribute("name", "Газ");
         return "main";
     }
 }

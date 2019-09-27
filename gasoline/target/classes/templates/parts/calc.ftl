@@ -10,6 +10,9 @@
                 <a class="dropdown-item" href="diesel">ДТ</a>
                 <a class="dropdown-item" href="gas">Газ</a>
             </div>
+            <#if name??>
+                <a class="btn btn-primary" href="main">Назад</a>
+            </#if>
         </div>
     </div>
     <div class="mb-3">
